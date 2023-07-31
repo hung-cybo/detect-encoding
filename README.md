@@ -10,7 +10,7 @@ node index.js <file-path> [encoding]
 
 ## Example
 
-Should print the correct content of the file
+Should print the decoded content of the file
 
 ```bash
 node index.js test-utf8.txt utf8
