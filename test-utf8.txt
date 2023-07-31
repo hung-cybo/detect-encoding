@@ -1,0 +1,2 @@
+Hello, こんにちは！申
+This file is encoded in UTF-8.
