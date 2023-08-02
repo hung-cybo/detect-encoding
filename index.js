@@ -5,9 +5,6 @@ const detectMismatchedEncoding = (inputData, specifiedEncoding) => {
     // Attempt to decode the input data with the specified encoding
     const decodedString = iconv.decode(inputData, specifiedEncoding);
 
-    // Re-encode the decoded string back to a buffer using the specified encoding
-    const reEncodedBuffer = iconv.encode(decodedString, specifiedEncoding);
-
     // Compare the re-encoded buffer with the original decoded buffer
     // console.log("inputDataString", inputData.toString());
     // console.log("decodedString", decodedString);
@@ -23,7 +20,7 @@ const detectMismatchedEncoding = (inputData, specifiedEncoding) => {
         const _isValidInBothEncodings = isValidInBothEncodings(inputData);
         if(_isValidInBothEncodings){
             // This is a valid encoding in both UTF-8 and the specified encoding but the decoded string is different
-            return decodedString !== reEncodedBuffer.toString();
+            return decodedString !== inputData.toString();
         }
     }
 
